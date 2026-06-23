@@ -1,0 +1,15 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: pretend-aws
+  namespace: app-dev
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - match: Host(`localstack-aws.lab-hc.cloud`)
+      kind: Rule
+      services:
+        - name: pretend-aws
+          port: 80
