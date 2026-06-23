@@ -19,6 +19,11 @@ spec:
           ports:
             - containerPort: 4566
           env:
+            - name: LOCALSTACK_AUTH_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: localstack-tk
+                  key: LOCALSTACK_AUTH_TOKEN
             - name: SERVICES
               value: "ec2,iam,s3"
             - name: PERSISTENCE
