@@ -24,8 +24,6 @@ spec:
                 secretKeyRef:
                   name: localstack-tk
                   key: LOCALSTACK_AUTH_TOKEN
-            - name: SERVICES
-              value: "ec2,iam,s3"
             - name: PERSISTENCE
               value: "1"
             - name: DEBUG
